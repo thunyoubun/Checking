@@ -1,12 +1,12 @@
 #include<iostream>
 using namespace std;
 
-//จงเขียน ฟังก์ชัน findWinnner()
+//จงเขียน ฟังก์ชัน int findWinnner() ที่รับ ค่า arrays 2มิติ  และ cout หมายเลขของผู้เข้าแข่งขันที่ชนะ และคะแนนรวมที่เขาได้รับ
 
-int findWinner(int sc [][4]){
+int findWinner(int sc[][4]){
 
- int max=0, i, j, pp[5]={0}, ans;
-      for(i=0; i<5; i++){
+     int max=0, i, j, pp[5]={0}, ans;
+    for(i=0; i<5; i++){
         for(j=0; j<4; j++){
             pp[i] += sc[i][j];        
         }
@@ -16,14 +16,11 @@ int findWinner(int sc [][4]){
         }
     }
     cout << ans+1 << " " << max;
-    
-    return ans+1; max;
+    return 0;
 }
 
 
-
-
-
+//// TEST ////
 
 int findDinner(int sc [][4]){
 
@@ -38,17 +35,24 @@ int findDinner(int sc [][4]){
         }
     }
     
-    return ans+1; max;
+    cout << ans+1 << " " << max;
+    return 0;
+    
 }
 
-void checkAns(int sc [][4]){
-    if( findWinner(sc) == findDinner(sc)  ){
+int checkAns(int sc [][4]){
+    
+     if( findWinner(sc) == findDinner(sc)   ){
+        cout << "\b\b\b\b" << "     ";
         cout << "\n" << "CORRECT";
     }else{
+        cout << "\b\b\b\b" << "     ";
         cout << "\n" << "WRONG";
     }
-
+    return 0;
 }
+
+
 
 int main(){
     int sc[][4] = {5, 4, 4, 5, 5, 4, 4, 4,5, 5, 4, 4,5, 5, 5, 4,4 ,4, 4, 5};
